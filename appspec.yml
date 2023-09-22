@@ -1,0 +1,18 @@
+version: 0.0
+os: linux
+files:
+  - source: ./install.txt
+    destination: /tmp/test
+hooks:
+  BeforeInstall:
+    - location: ./scripts/run.sh
+      timeout: 900
+  AfterInstall:
+    - location: ./scripts/run.sh
+      timeout: 900
+  ApplicationStart:
+    - location: ./scripts/run.sh
+      timeout: 900
+  ValidateService:
+    - location: ./scripts/run.sh
+      timeout: 900
